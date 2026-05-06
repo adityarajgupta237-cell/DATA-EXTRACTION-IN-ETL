@@ -1,0 +1,132 @@
+DATA EXTRACTION IN ETL
+
+Question 1: Describe different types of data sources used in ETL with suitable examples.
+
+ANS. ETL (Extract, Transform, Load) processes pull data from a variety of sources:
+
+1.Databases (Structured)
+Examples: MySQL, PostgreSQL, Oracle
+Use: Transactional systems like banking or e-commerce
+
+2.Flat Files
+Examples: CSV, Excel, JSON, XML
+Use: Data exchange between systems or exports from applications
+
+3.APIs (Web Services)
+Examples: REST, SOAP APIs
+Use: Real-time data from apps like Twitter or payment gateways
+
+4.Cloud Storage
+Examples: AWS S3, Google Cloud Storage, Azure Blob
+Use: Large-scale data lakes and backups
+
+5.Streaming Sources
+Examples: Kafka, IoT devices, logs
+Use: Real-time analytics (e.g., sensor data)
+
+6.Enterprise Applications
+Examples: SAP, Salesforce
+Use: Business operations data (CRM, ERP)
+
+Question 2: What is data extraction? Explain its role in the ETL pipeline.
+
+ANS.Data extraction is the process of collecting data from various sources for processing.
+
+Role in ETL:
+
+-First step in ETL pipeline
+-Ensures relevant and accurate data is pulled
+-Can be:
+--Full extraction (entire dataset)
+--Incremental extraction (only new/updated data)
+
+It sets the foundation for transformation and loading.
+
+Question 3: Explain the difference between CSV and Excel in terms of extraction and ETL usage.
+
+ANS.| Feature       | CSV                      | Excel                               |
+| ------------- | ------------------------ | ----------------------------------- |
+|- Format        |- Plain text               |- Binary/structured (.xlsx)           |
+|- Complexity    |- Simple                   |- Complex (multiple sheets, formulas) |
+|- Speed         |- Faster to process        |- Slower due to structure             |
+|- Size Handling |- Better for large files   |- Limited performance                 |
+|- ETL Usage     |- Preferred for automation |- Used for manual/reporting data      |
+
+Question 4: Explain the steps involved in extracting data from a relational database.
+
+ANS.1.Connect to Database
+-Use credentials and connection strings
+
+2.Identify Data
+-Select tables, views, or queries
+
+3.Write Query
+-SQL queries to filter needed data
+
+4.Execute Extraction
+-Run query and fetch data
+
+5.Handle Data Types
+-Ensure compatibility (dates, nulls, etc.)
+
+6.Store Extracted Data
+-Save to staging area or file
+
+7.Optimize Extraction
+-Use indexing, partitioning for performance
+
+Question 5: Explain three common challenges faced during data extraction.
+
+ANS.1.Data Quality Issues
+-Missing, duplicate, or inconsistent data
+
+2.Performance Problems
+-Slow queries or large datasets causing delays
+
+3.Data Source Heterogeneity
+-Different formats (JSON, XML, SQL) require different handling
+
+Question 6: What are APIs? Explain how APIs help in real-time data extraction.
+
+ANS.APIs (Application Programming Interfaces) allow systems to communicate and exchange data.
+
+-Role in real-time extraction:
+
+-Provide live data access
+-Support automation
+-Enable event-driven updates
+-Example: Fetching stock prices or weather data instantly
+
+Question 7: Why are databases preferred for enterprise-level data extraction?
+
+ANS.Databases are preferred because:
+
+-Structured data storage
+-High performance (optimized queries, indexing)
+-Data integrity and security
+-Scalability for large datasets
+-Support for concurrent users
+
+They ensure reliable and efficient extraction in large systems.
+
+Question 8: What steps should an ETL developer take when extracting data from large CSV files (1GB+)?
+ANS.1.Use Chunk Processing
+-Read file in parts instead of loading entirely
+
+2.Use Efficient Libraries
+-Example: Pandas with chunksize
+
+3.Optimize Memory Usage
+-Avoid unnecessary columns
+
+4.Parallel Processing
+-Split file and process simultaneously
+
+5.Validate Data
+-Check for corruption or formatting issues
+
+6.Use Compression
+-Work with gzip/zip to reduce I/O load
+
+7.Log and Monitor
+-Track performance and errors
